@@ -101,7 +101,7 @@ class AtmosphereModel:
                 self.config.atmosphere.f107,
                 self.config.atmosphere.ap,
             )
-            density = float(values[5])
+            density = float(values[0][5]) * 1e3  # g/cm³ → kg/m³
             return AtmosphereSample(density, backend_name)
 
         if backend_name == "msise00":
